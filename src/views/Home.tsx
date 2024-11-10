@@ -5,6 +5,8 @@ import { fetchNeoData } from '../api/nasaApi'
 import { processNeoData } from '../utils/dataProcessor'
 import { ProcessedNeoData } from '../types/neo'
 import NeoChart from '../components/NeoChart'
+import Loading from '../components/Loading'
+import Error from '../components/Error'
 
 const Home: React.FC = () => {
   const [neoData, setNeoData] = useState<ProcessedNeoData[]>([])
@@ -28,13 +30,11 @@ const Home: React.FC = () => {
   }, [])
 
   if (loading) {
-    return <h1 className="text-2xl font-bold text-center mb-4">Loading...</h1>
+    return <Loading />
   }
 
   if (error) {
-    return (
-      <h1 className="text-2xl font-bold text-center mb-4">An error occurred</h1>
-    )
+    return <Error message={error} />
   }
 
   return (
