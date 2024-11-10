@@ -65,14 +65,14 @@ const Home: React.FC = () => {
       <h1 className="text-2xl font-bold text-center mb-4">
         Near Earth Objects Visualization
       </h1>
-      <div className="fixed top-16 right-16 z-50 flex items-center space-x-4">
-      <ViewSwitcher currentView={currentView} onSwitchView={setCurrentView} />
-      <OrbitingBodySelector
-        orbitingBodies={orbitingBodies}
-        selectedBody={selectedBody}
-        onSelectBody={setSelectedBody}
-      />
-    </div>
+      <div className="flex justify-end items-center space-x-4 mb-4">
+        <ViewSwitcher currentView={currentView} onSwitchView={setCurrentView} />
+        <OrbitingBodySelector
+          orbitingBodies={orbitingBodies}
+          selectedBody={selectedBody}
+          onSelectBody={setSelectedBody}
+        />
+      </div>
       {filteredData.length === 0 ? (
         <div className="text-center mt-10">No data available.</div>
       ) : currentView === 'chart' ? (

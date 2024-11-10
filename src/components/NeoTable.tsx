@@ -7,7 +7,7 @@ interface NeoTableProps {
 
 const NeoTable: React.FC<NeoTableProps> = ({ neoData }) => {
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto mt-4">
       <table className="min-w-full table-auto">
         <thead>
           <tr>
