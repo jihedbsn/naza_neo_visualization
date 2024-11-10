@@ -36,8 +36,8 @@ This project is a React application that visualizes data about Near-Earth Object
 
 ### Prerequisites
 
-- **Node.js** (version 12 or higher)
-- **npm** (version 6 or higher)
+- **Node.js** (version 20 or higher)
+- **npm** (version 10 or higher)
 
 ### Installation
 
@@ -46,4 +46,9 @@ This project is a React application that visualizes data about Near-Earth Object
    ```bash
    git clone <your-repository-url>
    cd neo-visualization
+   ```
+2. **Install dependencies and start the project:**
+   ```bash
+   npm install
+   npm start
    ```
