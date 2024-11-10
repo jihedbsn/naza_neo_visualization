@@ -8,6 +8,8 @@ import Error from '../components/Error'
 import OrbitingBodySelector from '../components/OrbitingBodySelector'
 import ViewSwitcher from '../components/ViewSwitcher'
 import NeoTable from '../components/NeoTable'
+import { handleDownloadCSV } from '../utils/csvDownloader'
+import CsvDownloader from '../components/CsvDownloader'
 
 const Home: React.FC = () => {
   const [neoData, setNeoData] = useState<ProcessedNeoData[]>([])
@@ -56,9 +58,9 @@ const Home: React.FC = () => {
     return <Loading />
   }
 
-  if (error) {
-    return <Error message={error} />
-  }
+  //   if (error) {
+  //     return <Error message={error} />
+  //   }
 
   return (
     <div className="container mx-auto p-4">
@@ -66,6 +68,11 @@ const Home: React.FC = () => {
         Near Earth Objects Visualization
       </h1>
       <div className="flex justify-end items-center space-x-4 mb-4">
+        <CsvDownloader
+          onDownload={() => {
+            handleDownloadCSV(filteredData)
+          }}
+        />
         <ViewSwitcher currentView={currentView} onSwitchView={setCurrentView} />
         <OrbitingBodySelector
           orbitingBodies={orbitingBodies}

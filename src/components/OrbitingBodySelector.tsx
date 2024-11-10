@@ -44,7 +44,7 @@ const OrbitingBodySelector: React.FC<OrbitingBodySelectorProps> = ({
                 onClick={() => {
                   onSelectBody(body)
                   // for autoclose on selecting
-                  // setIsOpen((prev) => !prev)
+                  setIsOpen((prev) => !prev)
                 }}
                 className="flex items-center px-4 py-2 cursor-pointer hover:bg-blue-100"
               >
