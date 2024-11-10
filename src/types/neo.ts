@@ -14,6 +14,12 @@ export interface NeoData {
   id: string
   name: string
   estimated_diameter: EstimatedDiameterData
+  close_approach_data: CloseApproachData[]
+  [key: string]: any
+}
+
+export interface CloseApproachData {
+  orbiting_body: string
   [key: string]: any
 }
 
@@ -22,4 +28,5 @@ export interface ProcessedNeoData {
   minDiameter: number
   maxDiameter: number
   averageDiameter: number
+  orbitingBodies: string[]
 }
